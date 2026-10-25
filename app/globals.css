@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+:root {
+  --background: #070a08;
+  --foreground: #edf4ec;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+.text-balance { text-wrap: balance; }
+.dna-grid {
+  background-image:
+    linear-gradient(rgba(190, 242, 100, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 242, 100, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 5%, rgba(132, 204, 22, 0.13), transparent 35%);
+  background-size: 54px 54px, 54px 54px, 100% 100%;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
